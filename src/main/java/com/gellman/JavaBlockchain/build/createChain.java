@@ -22,7 +22,7 @@ public class createChain {
 
         blockChain.addBlock(new Block(1, LocalDateTime.now(), new JSONObject().put("Valor",100.32),""));
 
-        blockChain.addBlock(new Block(1, LocalDateTime.now(), new JSONObject().put("Valor",23.10),""));
+        blockChain.addBlock(new Block(2, LocalDateTime.now(), new JSONObject().put("Valor",23.10),""));
         log.info(blockChain.toString());
     }
 }
