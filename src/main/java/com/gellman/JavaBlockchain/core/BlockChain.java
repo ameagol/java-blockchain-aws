@@ -18,7 +18,7 @@ public class BlockChain {
     }
 
     public Block setGenesist (){
-        return new Block(0, LocalDateTime.now(), new JSONObject().append("Header", "Genesis Block"), "0");
+        return new Block(0, LocalDateTime.now(), new JSONObject().put("Header", "Genesis Block"), "0");
     }
 
     private Block getLatestBlock(){
