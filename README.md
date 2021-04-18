@@ -11,9 +11,7 @@ BlockChain{
       index=0,
       "previusHash"="0",
       "data"={
-        "Header":[
-          "Genesis Block"
-        ]
+        "Header": "Genesis Block"
       },
       "hash"="779ef46f374f0b167a00a4d20f7cb64f86c002ae012b28f29af8b567da656c15",
       "timestamp=2021-04-18T11:57:54.479309700"
