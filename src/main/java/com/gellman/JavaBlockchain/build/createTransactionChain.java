@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Slf4j
 @Component
-public class createChain {
+public class createTransactionChain {
 
     @Autowired
     private BlockChain blockChain;
@@ -20,9 +20,13 @@ public class createChain {
     @PostConstruct
     public void init(){
 
-        blockChain.addBlock(new Block(1, LocalDateTime.now(), new JSONObject().put("Valor",100.32),""));
+        blockChain.addBlock(new Block(1, LocalDateTime.now(), new JSONObject().put("Order Amount",100.32),""));
+        blockChain.addBlock(new Block(2, LocalDateTime.now(), new JSONObject().put("Order Amount",23.10),""));
 
-        blockChain.addBlock(new Block(2, LocalDateTime.now(), new JSONObject().put("Valor",23.10),""));
         log.info(blockChain.toString());
+        log.info("Is this Chain valid ? " + blockChain.validateChain());
+
+        blockChain.compromiseChain(new JSONObject().put("Order Amount", 100000000000.21),2);
+        log.info("Is this Still Chain valid ? " + blockChain.validateChain());
     }
 }
